@@ -11,6 +11,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey.shade300,
       appBar: AppBar(
         title: Text("Water Tracker",
         style: TextStyle(
@@ -21,6 +22,25 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         centerTitle: true,
         backgroundColor: Colors.blueGrey,
+      ),
+      body: Column(
+        children: [
+          Center(
+            child: Container(
+              margin: EdgeInsets.all(20),
+              padding: EdgeInsets.all(20),
+              height: 200,
+              width: 200,
+
+              child: CircularProgressIndicator(
+                value: 0.3,
+                strokeWidth: 15,
+                valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF6DD5FA)),
+                backgroundColor:Color(0xFF2980B9),
+              )
+            ),
+          )
+        ],
       ),
     );
   }
