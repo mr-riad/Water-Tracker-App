@@ -32,11 +32,29 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 200,
               width: 200,
 
-              child: CircularProgressIndicator(
-                value: 0.3,
-                strokeWidth: 15,
-                valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF6DD5FA)),
-                backgroundColor:Color(0xFF2980B9),
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  SizedBox(
+                    height: double.infinity,
+                    width: double.infinity,
+                    child: CircularProgressIndicator(
+                      value: 0.6, // 60%
+                      strokeWidth: 15,
+                      valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF6DD5FA)),
+                      backgroundColor: Color(0xFF2980B9),
+                    ),
+                  ),
+                  Text(
+                    "60%",
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                ],
+
               )
             ),
           )
