@@ -85,9 +85,20 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
 
-          CustomButton(),
-          CustomButton(),
-          CustomButton(),
+          CustomButton(
+            text: "100L",
+            onClick: () {},
+          ),
+
+          CustomButton(
+            text: "500 L",
+            onClick: () {},
+          ),
+
+          CustomButton(
+            text: "1000 L",
+            onClick: () {},
+          ),
         ],
       ),
     );

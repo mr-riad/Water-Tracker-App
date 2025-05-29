@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({
+
+  String text;
+  final VoidCallback onClick;
+  CustomButton({
     super.key,
+    required this.onClick,
+    required this.text
   });
 
   @override
@@ -16,12 +21,12 @@ class CustomButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
           ),
         ),
-        onPressed: () {},
+        onPressed: onClick,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(Icons.water_drop_outlined,color: Colors.black,),
-            Text("+100 L",
+            Text(text,
               style: TextStyle(
                   color: Colors.black,
                   fontSize: 20,
