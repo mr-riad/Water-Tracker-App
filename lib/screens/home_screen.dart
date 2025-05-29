@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../utills/button.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -30,7 +32,12 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Row(
               children: [
                 Container(
-                  margin: EdgeInsets.all(20),
+                  margin: EdgeInsets.only(
+                    left: 20,
+                    right: 10,
+                    top: 20,
+                    bottom: 20
+                  ),
                   padding: EdgeInsets.all(20),
                   height: 200,
                   width: 200,
@@ -63,7 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 Expanded(
                   child: ListTile(
-                    title: Text("Tank",style: TextStyle(
+                    title: Text("Capacity",style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 30
                     ),),
@@ -78,20 +85,13 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
 
-          Container(
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.grey,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
-              onPressed: () {},
-              child: Text("+100l"),
-            ),
-          ),
+          CustomButton(),
+          CustomButton(),
+          CustomButton(),
         ],
       ),
     );
   }
 }
+
+
