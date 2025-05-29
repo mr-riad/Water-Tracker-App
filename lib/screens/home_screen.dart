@@ -64,6 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Container(
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.grey,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
