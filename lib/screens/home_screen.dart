@@ -13,12 +13,13 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Colors.grey.shade300,
       appBar: AppBar(
-        title: Text("Water Tracker",
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 30,
-          color: Colors.black
-        ),
+        title: Text(
+          "Water Tracker",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 30,
+            color: Colors.black,
+          ),
         ),
         centerTitle: true,
         backgroundColor: Colors.blueGrey,
@@ -41,7 +42,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: CircularProgressIndicator(
                       value: 0.6, // 60%
                       strokeWidth: 15,
-                      valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF6DD5FA)),
+                      valueColor: AlwaysStoppedAnimation<Color>(
+                        Color(0xFF6DD5FA),
+                      ),
                       backgroundColor: Color(0xFF2980B9),
                     ),
                   ),
@@ -54,10 +57,21 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ],
-
-              )
+              ),
             ),
-          )
+          ),
+
+          Container(
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+              onPressed: () {},
+              child: Text("+100l"),
+            ),
+          ),
         ],
       ),
     );
