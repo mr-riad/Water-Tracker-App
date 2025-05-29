@@ -27,37 +27,54 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Column(
         children: [
           Center(
-            child: Container(
-              margin: EdgeInsets.all(20),
-              padding: EdgeInsets.all(20),
-              height: 200,
-              width: 200,
-
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  SizedBox(
-                    height: double.infinity,
-                    width: double.infinity,
-                    child: CircularProgressIndicator(
-                      value: 0.6, // 60%
-                      strokeWidth: 15,
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        Color(0xFF6DD5FA),
+            child: Row(
+              children: [
+                Container(
+                  margin: EdgeInsets.all(20),
+                  padding: EdgeInsets.all(20),
+                  height: 200,
+                  width: 200,
+                
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      SizedBox(
+                        height: double.infinity,
+                        width: double.infinity,
+                        child: CircularProgressIndicator(
+                          value: 0.6, // 60%
+                          strokeWidth: 15,
+                          valueColor: AlwaysStoppedAnimation<Color>(
+                            Color(0xFF6DD5FA),
+                          ),
+                          backgroundColor: Color(0xFF2980B9),
+                        ),
                       ),
-                      backgroundColor: Color(0xFF2980B9),
-                    ),
+                      Text(
+                        "60%",
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ],
                   ),
-                  Text(
-                    "60%",
-                    style: TextStyle(
-                      fontSize: 22,
+                ),
+                Expanded(
+                  child: ListTile(
+                    title: Text("Tank",style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
+                      fontSize: 30
+                    ),),
+                    subtitle: Text("2000L",
+                        style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 25
+                    )),
                   ),
-                ],
-              ),
+                )
+              ],
             ),
           ),
 
