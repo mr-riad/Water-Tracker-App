@@ -49,6 +49,42 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: true,
         backgroundColor: Colors.blueGrey,
       ),
+
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.blueGrey,
+              ),
+              child: Text(
+                'Menu',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.refresh),
+              title: Text('Reset Tank'),
+              onTap: () {
+                Navigator.pop(context);
+                resetTank();
+              },
+            ),
+          ],
+        ),
+      ),
+
       body: Column(
         children: [
           Center(
@@ -131,15 +167,16 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Reset", style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 22
-                  ),),
-                  SizedBox(
-                    width: 10,
+                  Text(
+                    "Reset",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 22,
+                    ),
                   ),
-                  Icon(Icons.dangerous_outlined,color: Colors.black,),
+                  SizedBox(width: 10),
+                  Icon(Icons.dangerous_outlined, color: Colors.black),
                 ],
               ),
             ),
