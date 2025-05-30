@@ -10,6 +10,23 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int totalCapacity = 2000;
+  int currentIntake = 0;
+
+  double get progress {
+    return currentIntake / totalCapacity;
+  }
+
+  void addWater(int amount) {
+    setState(() {
+      if (currentIntake + amount <= totalCapacity) {
+        currentIntake += amount;
+      } else {
+        currentIntake = totalCapacity;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,12 +53,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     left: 20,
                     right: 10,
                     top: 20,
-                    bottom: 20
+                    bottom: 20,
                   ),
                   padding: EdgeInsets.all(20),
                   height: 200,
                   width: 200,
-                
+
                   child: Stack(
                     alignment: Alignment.center,
                     children: [
@@ -70,39 +87,36 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 Expanded(
                   child: ListTile(
-                    title: Text("Capacity",style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 30
-                    ),),
-                    subtitle: Text("2000L",
-                        style: TextStyle(
+                    title: Text(
+                      "Capacity",
+                      style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 25
-                    )),
+                        fontSize: 30,
+                      ),
+                    ),
+                    subtitle: Text(
+                      "2000L",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 25,
+                      ),
+                    ),
                   ),
-                )
+                ),
               ],
             ),
           ),
 
-          CustomButton(
-            text: "100L",
-            onClick: () {},
-          ),
+          CustomButton(text: "100L", onClick: () {}),
+          SizedBox(height: 10),
 
-          CustomButton(
-            text: "500 L",
-            onClick: () {},
-          ),
+          CustomButton(text: "500 L", onClick: () {}),
 
-          CustomButton(
-            text: "1000 L",
-            onClick: () {},
-          ),
+          SizedBox(height: 10),
+
+          CustomButton(text: "1000 L", onClick: () {}),
         ],
       ),
     );
   }
 }
-
-
