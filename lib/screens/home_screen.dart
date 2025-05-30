@@ -66,7 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         height: double.infinity,
                         width: double.infinity,
                         child: CircularProgressIndicator(
-                          value: 0.6, // 60%
+                          value: progress,
                           strokeWidth: 15,
                           valueColor: AlwaysStoppedAnimation<Color>(
                             Color(0xFF6DD5FA),
@@ -75,7 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       Text(
-                        "60%",
+                        "${(progress*100).toStringAsFixed(1)}%",
                         style: TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
@@ -107,14 +107,14 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
 
-          CustomButton(text: "100L", onClick: () {}),
+          CustomButton(text: "100L", onClick: () => addWater(100)),
           SizedBox(height: 10),
 
-          CustomButton(text: "500 L", onClick: () {}),
+          CustomButton(text: "500 L", onClick: () => addWater(500)),
 
           SizedBox(height: 10),
 
-          CustomButton(text: "1000 L", onClick: () {}),
+          CustomButton(text: "1000 L", onClick: () => addWater(1000)),
         ],
       ),
     );
