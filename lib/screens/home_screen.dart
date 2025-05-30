@@ -27,6 +27,12 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  void resetTank() {
+    setState(() {
+      currentIntake = 0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       Text(
-                        "${(progress*100).toStringAsFixed(1)}%",
+                        "${(progress * 100).toStringAsFixed(1)}%",
                         style: TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
@@ -115,6 +121,29 @@ class _HomeScreenState extends State<HomeScreen> {
           SizedBox(height: 10),
 
           CustomButton(text: "1000 L", onClick: () => addWater(1000)),
+          SizedBox(height: 50),
+
+          Container(
+            width: 300,
+            color: Colors.red,
+            child: TextButton(
+              onPressed: () => resetTank(),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Reset", style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 22
+                  ),),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Icon(Icons.dangerous_outlined,color: Colors.black,),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
