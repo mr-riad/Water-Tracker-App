@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../utills/button.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -14,7 +13,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int currentIntake = 0;
 
   double get progress {
-    return currentIntake / totalCapacity;
+    return currentIntake / totalCapacity;  //the this is progress calculation
   }
 
   void addWater(int amount) {
